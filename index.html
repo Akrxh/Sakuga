@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sakuga – Anime worth watching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f3ee; --surface: #ffffff; --surface2: #efeae2; --ink: #171a2b; --muted: #5d6480; --line: #dcd6ca;
+  --accent: #e0457a; --on-accent: #ffffff; --gold: #a97a1f;
+  --display: "Shippori Mincho B1", "Hiragino Mincho ProN", Georgia, serif;
+  --body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pad: clamp(16px, 4vw, 56px);
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b0e1c; --surface: #151a30; --surface2: #1d2340; --ink: #f3f0ea; --muted: #9ba3c0; --line: #2a3152;
+    --accent: #ff6f9c; --on-accent: #260412; --gold: #f2c46d;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b0e1c; --surface: #151a30; --surface2: #1d2340; --ink: #f3f0ea; --muted: #9ba3c0; --line: #2a3152;
+  --accent: #ff6f9c; --on-accent: #260412; --gold: #f2c46d;
+}
+html { height: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 8px; }
+
+/* generated artwork */
+.art { position: absolute; inset: 0; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(circle 36cqmin at 74% 30%, color-mix(in srgb, var(--c) 62%, transparent) 0 99%, transparent 100%),
+    repeating-linear-gradient(115deg, #ffffff12 0 2px, transparent 2px 24px),
+    radial-gradient(90% 70% at 8% 100%, var(--c2), transparent 72%),
+    linear-gradient(170deg, color-mix(in srgb, var(--c) 42%, #080a16), #080a16); }
+.art::before { content: attr(data-initial); position: absolute; left: 6%; bottom: -14%; font-family: var(--display); font-weight: 800; font-size: 80cqh; line-height: 1; color: #fff; opacity: .1; z-index: -1; }
+.art::after { content: ""; position: absolute; inset: 0; opacity: .2; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.alt { position: absolute; z-index: 2; right: 10px; top: 12px; writing-mode: vertical-rl; font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: .14em; color: #fff; opacity: .85; text-shadow: 0 1px 8px #0008; pointer-events: none; max-height: 70%; overflow: hidden; }
+
+
+a.pill { display: inline-flex; align-items: center; text-decoration: none; }
+#submit { width: min(720px, calc(100% - 16px)); max-height: 92vh; }
+/* header */
+.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 24px; padding: calc(env(safe-area-inset-top, 0px) + 12px) var(--pad) 10px; background: linear-gradient(#000b, #0000); transition: background .25s; }
+.top.solid { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: .01em; color: #fff; background: none; border: 0; padding: 0; }
+.top.solid .brand { color: var(--ink); }
+.logo { width: 30px; height: 30px; border-radius: 50%; background: conic-gradient(from 200deg, var(--accent), var(--gold), var(--accent)); display: grid; place-items: center; color: #1a0a10; }
+.nav { display: flex; gap: 4px; order: 4; width: 100%; }
+.nav button { background: none; border: 0; padding: 7px 14px; border-radius: 999px; font-size: 14.5px; font-weight: 600; color: #ffffffcc; }
+.top.solid .nav button { color: var(--muted); }
+.nav button:hover { color: #fff; }
+.top.solid .nav button:hover { color: var(--ink); }
+.nav button[aria-current="true"] { background: #ffffff26; color: #fff; box-shadow: inset 0 -2px 0 var(--gold); border-radius: 999px 999px 8px 8px; }
+.top.solid .nav button[aria-current="true"] { background: color-mix(in srgb, var(--ink) 9%, transparent); color: var(--ink); }
+.right { margin-left: auto; display: flex; align-items: center; gap: 10px; position: relative; order: 2; z-index: 10; }
+.brand { order: 1; }
+.searchbox { order: 3; width: 100%; display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 6px 0 14px; border-radius: 999px; border: 1.5px solid #ffffff40; background: #00000066; color: #fff; backdrop-filter: blur(10px); transition: border-color .2s, background .2s, box-shadow .2s; }
+.searchbox:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 28%, transparent); }
+.top.solid .searchbox { background: var(--surface); border-color: var(--line); color: var(--ink); }
+.top.solid .searchbox:focus-within { border-color: var(--gold); }
+.sicon { flex: none; display: grid; place-items: center; opacity: .8; }
+.searchbox input { flex: 1; min-width: 0; height: 100%; background: none; border: 0; outline: none; font-size: 15px; color: inherit; -webkit-appearance: none; appearance: none; }
+.searchbox input::-webkit-search-cancel-button { display: none; }
+.searchbox input::placeholder { color: inherit; opacity: .6; }
+#sclear { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 0; background: color-mix(in srgb, currentColor 16%, transparent); color: inherit; display: grid; place-items: center; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--gold); background: var(--surface2); color: var(--ink); font-weight: 700; font-family: var(--display); }
+.menu { position: absolute; z-index: 20; right: 0; top: 48px; min-width: 220px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 14px; padding: 6px; box-shadow: 0 20px 50px #0008; }
+.menu[hidden] { display: none; }
+.menu button { display: block; width: 100%; text-align: left; background: none; border: 0; padding: 10px 12px; border-radius: 9px; font-size: 14.5px; }
+.menu button:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+
+/* billboard */
+.billboard { position: relative; height: clamp(520px, 86vh, 780px); container-type: size; color: #fff; }
+.billboard::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, #060814e6 0%, #06081499 40%, transparent 75%); }
+.billboard::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 200px; z-index: 1; background: linear-gradient(transparent, var(--bg)); }
+.bb { position: absolute; z-index: 2; left: var(--pad); bottom: 120px; max-width: min(580px, calc(100% - 2 * var(--pad))); }
+.bb.swap { animation: rise .55s ease-out; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+.chips2 { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.badge { font-size: 12.5px; font-weight: 700; padding: 4px 11px; border-radius: 999px; background: #ffffff26; backdrop-filter: blur(8px); }
+.badge.gold { background: var(--gold); color: #241800; }
+.bb h1 { font-family: var(--display); font-weight: 800; font-size: clamp(42px, 7.6vw, 88px); line-height: 1; letter-spacing: -.01em; margin: 0 0 14px; text-shadow: 0 4px 30px #0009; text-wrap: balance; }
+.facts { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: 14.5px; font-weight: 500; margin-bottom: 12px; text-shadow: 0 1px 8px #0008; }
+.score { color: var(--gold); font-weight: 700; }
+.bb p { margin: 0 0 22px; font-size: 16.5px; max-width: 52ch; text-shadow: 0 1px 10px #000a; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 9px; height: 46px; padding: 0 22px; border-radius: 999px; border: 0; font-weight: 700; font-size: 15.5px; text-decoration: none; }
+.btn.go { background: var(--accent); color: var(--on-accent); }
+.btn.go:hover { filter: brightness(1.08); }
+.btn.ghost { background: #ffffff2e; color: #fff; backdrop-filter: blur(10px); }
+.btn.ghost:hover { background: #ffffff45; }
+.vert { position: absolute; z-index: 2; right: var(--pad); top: 130px; writing-mode: vertical-rl; font-family: var(--display); font-weight: 700; font-size: clamp(26px, 4.2vw, 46px); letter-spacing: .28em; color: #fff; text-shadow: 0 2px 20px #0009; padding-left: 16px; border-left: 2px solid var(--gold); max-height: 60%; overflow: hidden; }
+.dots { position: absolute; z-index: 2; right: var(--pad); bottom: 128px; display: flex; gap: 8px; }
+.dots button { width: 26px; height: 5px; border-radius: 3px; border: 0; padding: 0; background: #ffffff55; }
+.dots button[aria-current="true"] { background: var(--gold); }
+
+/* rows and cards */
+.rows { position: relative; z-index: 3; margin-top: -84px; padding-bottom: 30px; }
+.row { margin-bottom: 6px; }
+.row h2 { font-family: var(--display); font-weight: 800; font-size: clamp(21px, 2.6vw, 28px); margin: 0 var(--pad) 2px; }
+.rail { position: relative; }
+.track { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x proximity; padding: 16px var(--pad) 22px; scroll-padding-left: var(--pad); scrollbar-width: none; }
+.track::-webkit-scrollbar { display: none; }
+.arrow { position: absolute; top: 16px; bottom: 22px; width: 52px; z-index: 5; border: 0; display: none; place-items: center; opacity: 0; transition: opacity .2s; }
+.arrow.l { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+.arrow.r { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
+@media (hover: hover) { .arrow { display: grid; } .rail:hover .arrow { opacity: 1; } }
+.card { position: relative; flex: none; width: clamp(140px, 38vw, 196px); scroll-snap-align: start; }
+.grid .card { width: auto; }
+.poster { position: relative; aspect-ratio: 2 / 3; border-radius: 12px; overflow: hidden; container-type: size; background: #000; color: #fff; transition: transform .25s, box-shadow .25s; }
+.poster::after { content: ""; position: absolute; inset: 0; z-index: 2; background: linear-gradient(transparent 50%, #000000d9); pointer-events: none; }
+.open { position: absolute; inset: 0; z-index: 3; width: 100%; background: none; border: 0; border-radius: 12px; }
+.ct { position: absolute; z-index: 2; left: 12px; right: 34px; bottom: 32px; font-family: var(--display); font-weight: 800; font-size: 17px; line-height: 1.15; text-shadow: 0 2px 12px #000a; pointer-events: none; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.eps-tag { position: absolute; z-index: 2; left: 12px; bottom: 11px; font-size: 12px; font-weight: 600; opacity: .9; pointer-events: none; }
+.rate { position: absolute; z-index: 2; left: 10px; top: 10px; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: #000000a8; color: #f2c46d; backdrop-filter: blur(6px); pointer-events: none; }
+.play { position: absolute; z-index: 4; right: 10px; bottom: 10px; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; text-decoration: none; opacity: 0; transform: scale(.85); transition: .2s; }
+.play:focus-visible, .card:focus-within .play { opacity: 1; transform: none; }
+.cap { padding: 9px 2px 0; font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+@media (hover: hover) {
+  .card:hover .poster { transform: translateY(-6px); box-shadow: 0 0 0 2px var(--gold), 0 18px 40px #0009; }
+  .card:hover .play { opacity: 1; transform: none; }
+}
+@media (hover: none) { .play { opacity: 1; transform: none; } }
+
+/* browse pages */
+.page { padding: calc(env(safe-area-inset-top, 0px) + 110px) var(--pad) 40px; min-height: 70vh; }
+.page h1 { font-family: var(--display); font-weight: 800; font-size: clamp(32px, 5vw, 48px); margin: 0 0 14px; }
+.chips { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 18px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; padding: 7px 15px; border-radius: 999px; border: 1.5px solid var(--line); background: transparent; font-size: 14px; font-weight: 600; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 24px 14px; }
+.empty { padding: 60px 0; color: var(--muted); }
+.empty b { display: block; font-family: var(--display); font-size: 28px; color: var(--ink); margin-bottom: 6px; }
+
+/* dialogs */
+dialog { border: 0; padding: 0; background: var(--surface); color: var(--ink); border-radius: 22px; box-shadow: 0 40px 100px #000c; overflow: auto; }
+dialog::backdrop { background: #000000b0; backdrop-filter: blur(4px); }
+#detail { width: min(900px, calc(100% - 16px)); max-height: 92vh; }
+.d-art { position: relative; height: 320px; container-type: size; color: #fff; }
+.d-art::after { content: ""; position: absolute; inset: 0; z-index: 3; background: linear-gradient(transparent 35%, var(--surface)); }
+.x { position: sticky; top: 12px; float: right; margin: 12px 12px 0 0; z-index: 10; width: 38px; height: 38px; border-radius: 50%; border: 0; background: #000000a8; color: #fff; display: grid; place-items: center; }
+.d-body { padding: 0 clamp(18px, 4vw, 40px) 34px; margin-top: -84px; position: relative; z-index: 4; }
+.d-body h2 { font-family: var(--display); font-weight: 800; font-size: clamp(32px, 6vw, 54px); line-height: 1.02; margin: 0 0 4px; }
+.jp { font-family: var(--display); color: var(--gold); font-weight: 700; font-size: 18px; letter-spacing: .12em; margin-bottom: 10px; }
+.d-body .facts { text-shadow: none; color: var(--muted); }
+.d-body p.desc { font-size: 16.5px; max-width: 64ch; margin: 0 0 20px; }
+.d-body .btn.ghost { background: color-mix(in srgb, var(--ink) 10%, transparent); color: var(--ink); }
+.d-body h3 { font-family: var(--display); font-size: 24px; margin: 34px 0 12px; }
+.seasons { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
+.epwrap { display: grid; gap: 10px; }
+a.ep { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; padding: 12px 14px; border-radius: 16px; background: var(--surface2); text-decoration: none; border: 1.5px solid transparent; }
+a.ep:hover { border-color: var(--accent); }
+.epn { width: 54px; height: 54px; border-radius: 12px; display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 22px; color: #fff; background: linear-gradient(135deg, var(--c), var(--c2)); }
+.ept b { display: block; font-weight: 600; line-height: 1.3; }
+.ept small { color: var(--muted); font-size: 13px; }
+.ept p { margin: 4px 0 0; font-size: 14px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.epgo { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; }
+.noeps { color: var(--muted); padding: 10px 0; }
+.d-body .grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+
+/* manage */
+#manage { width: min(720px, calc(100% - 16px)); max-height: 92vh; }
+.dlg { padding: 20px 22px 24px; display: grid; gap: 14px; }
+.dlg h2 { font-family: var(--display); font-size: 30px; margin: 0; }
+.dlg p.hint { margin: 0; color: var(--muted); font-size: 14px; }
+.tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); }
+.tabs button { background: none; border: 0; padding: 10px 14px; font-weight: 600; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.fg { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fg .full { grid-column: 1 / -1; }
+.f label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 4px; }
+.f input, .f select, .f textarea { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--bg); font-size: 15px; }
+.f input:focus, .f select:focus, .f textarea:focus { outline: none; border-color: var(--accent); }
+.f textarea { min-height: 90px; resize: vertical; }
+.f small { display: block; color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+.chk { display: flex; align-items: center; gap: 8px; font-size: 14.5px; }
+.chk input { width: 18px; height: 18px; accent-color: var(--accent); }
+#json { width: 100%; min-height: 340px; resize: vertical; border-radius: 12px; border: 1.5px solid var(--line); background: var(--bg); padding: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; }
+#json:focus { outline: none; border-color: var(--accent); }
+.err { color: #ff6b81; font-size: 14px; min-height: 20px; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; }
+.btns div { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { height: 40px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--line); background: transparent; font-weight: 600; font-size: 14.5px; }
+.pill.go { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+[hidden] { display: none !important; }
+
+footer { padding: 26px var(--pad) 44px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
+footer b { color: var(--ink); font-family: var(--display); font-size: 20px; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 30px); background: var(--ink); color: var(--bg); padding: 10px 18px; border-radius: 999px; font-size: 14px; opacity: 0; pointer-events: none; transition: .25s; z-index: 200; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (min-width: 720px) { .top { flex-wrap: nowrap; } .nav { order: 2; width: auto; } .searchbox { order: 3; width: min(340px, 34vw); margin-left: auto; } .right { order: 4; margin-left: 0; } .grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); } }
+@media (max-width: 560px) {
+  .bb { bottom: 124px; }
+  .dots { left: var(--pad); right: auto; bottom: 92px; }
+  .billboard::before { background: linear-gradient(0deg, #060814f0 8%, #06081466 58%, transparent); }
+  .vert { font-size: 22px; top: 170px; }
+  .page { padding-top: calc(env(safe-area-inset-top, 0px) + 172px); }
+  .btn { height: 44px; padding: 0 18px; }
+  .d-art { height: 230px; }
+  .fg { grid-template-columns: 1fr; }
+  a.ep { grid-template-columns: auto 1fr; } .epgo { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .bb.swap { animation: none; } .poster, .play, .toast, .searchbox { transition: none; } }
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <button class="brand" id="brand" type="button" aria-label="Home">
+    <span class="logo" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></span>
+    <span id="siteName">Sakuga</span>
+  </button>
+  <nav class="nav" id="nav" aria-label="Sections">
+    <button type="button" data-view="home">Home</button>
+    <button type="button" data-view="series">Series</button>
+    <button type="button" data-view="movies">Movies</button>
+  </nav>
+  <div class="searchbox" id="sbox" role="search">
+    <span class="sicon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+    <input id="q" type="search" placeholder="Search anime, genre or platform" aria-label="Search anime" autocomplete="off">
+    <button type="button" id="sclear" aria-label="Clear search" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="right">
+    <button class="avatar" id="avatar" type="button" aria-label="Menu" aria-haspopup="true" aria-expanded="false">S</button>
+    <div class="menu" id="menu" hidden>
+      <button type="button" id="addBtn">Add anime</button>
+      <button type="button" id="themeBtn">Switch to light theme</button>
+    </div>
+  </div>
+</header>
+
+<main id="main"></main>
+
+<footer><b id="footName">Sakuga</b><br><span id="footTag"></span><br>Some links may be referral links. Opening one takes you to the streaming page for that title or episode.</footer>
+
+<dialog id="detail" aria-label="Details"><div id="detailBody"></div></dialog>
+
+<dialog id="submit" aria-label="Add anime">
+  <div class="dlg">
+    <h2>Add anime</h2>
+    <div id="subForm">
+      <p class="hint">Fill in the details and send. It goes to the site owner's Gmail and appears on the site once it's approved.</p>
+      <div class="fg" style="margin-top:12px">
+        <div class="f"><label for="fType">Type</label><select id="fType"><option value="series">Series (with episodes)</option><option value="movie">Movie</option></select></div>
+        <div class="f"><label for="fTitle">Title *</label><input id="fTitle" placeholder="Frieren: Beyond Journey's End"></div>
+        <div class="f"><label for="fAlt">Japanese title (optional)</label><input id="fAlt" placeholder="葬送のフリーレン"></div>
+        <div class="f"><label for="fLink">Watch link *</label><input id="fLink" type="url" placeholder="https://..."><small>Where people can watch it.</small></div>
+        <div class="f"><label for="fPlatform">Platform</label><input id="fPlatform" placeholder="Crunchyroll"></div>
+        <div class="f"><label for="fGenres">Genres</label><input id="fGenres" placeholder="Fantasy, Adventure"><small>Separate with commas.</small></div>
+        <div class="f"><label for="fYear">Year</label><input id="fYear" inputmode="numeric" placeholder="2023"></div>
+        <div class="f"><label for="fRating">Rating (0 to 10)</label><input id="fRating" inputmode="decimal" placeholder="9.3"></div>
+        <div class="f" id="statusWrap"><label for="fStatus">Status</label><select id="fStatus"><option>Ongoing</option><option>Completed</option></select></div>
+        <div class="f" id="seasonWrap"><label for="fSeason">Season name</label><input id="fSeason" value="Season 1"></div>
+        <div class="f full"><label for="fDesc">Description</label><textarea id="fDesc" placeholder="One or two sentences about the story."></textarea></div>
+        <div class="f full" id="epsWrap"><label for="fEps">Episodes (one per line)</label><textarea id="fEps" placeholder="Episode title | link | 24m&#10;Episode title | link | 24m"></textarea><small>Format: title | link | length. Link and length are optional.</small></div>
+        <div class="f"><label for="fName">Your name (optional)</label><input id="fName" autocomplete="name"></div>
+        <div class="f"><label for="fEmail">Your email (optional)</label><input id="fEmail" type="email" autocomplete="email"><small>So we can reach you if needed.</small></div>
+      </div>
+      <div class="err" id="subErr" role="alert"></div>
+      <div class="btns" style="margin-top:6px"><div></div><div><button class="pill" id="subCancel" type="button">Cancel</button><button class="pill go" id="subSend" type="button">Send to Gmail</button></div></div>
+    </div>
+    <div id="subDone" hidden>
+      <p class="hint" id="subMsg"></p>
+      <textarea id="subText" readonly aria-label="Your suggestion as text" style="min-height:220px;margin-top:12px;width:100%;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);padding:12px;font-family:ui-monospace,Menlo,monospace;font-size:13px"></textarea>
+      <div class="btns" style="margin-top:12px">
+        <div><button class="pill" id="subCopy" type="button">Copy text</button><a class="pill go" id="subGmail" href="#" target="_blank" rel="noopener">Open Gmail</a><a class="pill" id="subMail" href="#" target="_blank" rel="noopener">Use email app</a></div>
+        <div><button class="pill" id="subClose" type="button">Done</button></div>
+      </div>
+    </div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var OWNER_EMAIL = "ayu330061@gmail.com";
+/* Optional: paste a Formspree (or similar) form URL here to receive submissions silently
+   when you host this file yourself. Leave empty to use the visitor's email app. */
+var SUBMIT_ENDPOINT = "";
+
+var LIBRARY = {
+  site: { name: "Sakuga", tagline: "Anime series and films, with a direct link to every episode." },
+  anime: [
+    { type: "series", title: "Frieren: Beyond Journey's End", altTitle: "葬送のフリーレン", year: 2023, status: "Ongoing", genre: ["Fantasy", "Adventure", "Drama"], rating: 9.3, platform: "Crunchyroll", link: "https://www.imdb.com/find/?q=Frieren+Beyond+Journey%27s+End", totalEpisodes: 28, featured: true, color: "#5b7fd6",
+      description: "After the demon king falls, an elf mage outlives her party and sets out to understand the friends she never really knew.",
+      seasons: [{ name: "Season 1", episodes: [
+        { title: "The Journey's End", link: "https://www.imdb.com/find/?q=Frieren", duration: "24m" },
+        { title: "It Didn't Have to Be Magic...", link: "https://www.imdb.com/find/?q=Frieren", duration: "24m" },
+        { title: "Killing Magic", link: "https://www.imdb.com/find/?q=Frieren", duration: "24m" } ] }] },
+    { type: "series", title: "Fullmetal Alchemist: Brotherhood", altTitle: "鋼の錬金術師", year: 2009, status: "Completed", genre: ["Action", "Fantasy", "Adventure"], rating: 9.1, platform: "Crunchyroll", link: "https://www.imdb.com/find/?q=Fullmetal+Alchemist+Brotherhood", totalEpisodes: 64, featured: true, color: "#c8811f",
+      description: "Two brothers search for the Philosopher's Stone to restore the bodies they lost to a forbidden ritual.",
+      seasons: [{ name: "Season 1", episodes: [
+        { title: "Fullmetal Alchemist", link: "https://www.imdb.com/find/?q=Fullmetal+Alchemist+Brotherhood", duration: "24m" },
+        { title: "The First Day", link: "https://www.imdb.com/find/?q=Fullmetal+Alchemist+Brotherhood", duration: "24m" },
+        { title: "City of Heresy", link: "https://www.imdb.com/find/?q=Fullmetal+Alchemist+Brotherhood", duration: "24m" } ] }] },
+    { type: "series", title: "Jujutsu Kaisen", altTitle: "呪術廻戦", year: 2020, status: "Ongoing", genre: ["Action", "Supernatural"], rating: 8.6, platform: "Crunchyroll", link: "https://www.imdb.com/find/?q=Jujutsu+Kaisen", totalEpisodes: 24, featured: true, color: "#7a3fd0",
+      description: "A student swallows a cursed finger to protect his friends and is pulled into a world of sorcerers.",
+      seasons: [{ name: "Season 1", episodes: [
+        { title: "Ryomen Sukuna", link: "https://www.imdb.com/find/?q=Jujutsu+Kaisen", duration: "24m" },
+        { title: "For Myself", link: "https://www.imdb.com/find/?q=Jujutsu+Kaisen", duration: "24m" },
+        { title: "Girl of Steel", link: "https://www.imdb.com/find/?q=Jujutsu+Kaisen", duration: "24m" } ] }] },
+    { type: "series", title: "Demon Slayer", altTitle: "鬼滅の刃", year: 2019, status: "Ongoing", genre: ["Action", "Fantasy"], rating: 8.4, platform: "Netflix", link: "https://www.imdb.com/find/?q=Demon+Slayer", totalEpisodes: 26, color: "#1f8f7a",
+      description: "After his family is slaughtered, a kind-hearted boy trains to hunt demons and cure his sister.",
+      seasons: [{ name: "Season 1", episodes: [
+        { title: "Cruelty", link: "https://www.imdb.com/find/?q=Demon+Slayer", duration: "24m" },
+        { title: "Trainer Sakonji Urokodaki", link: "https://www.imdb.com/find/?q=Demon+Slayer", duration: "24m" },
+        { title: "Sabito and Makomo", link: "https://www.imdb.com/find/?q=Demon+Slayer", duration: "24m" } ] }] },
+    { type: "series", title: "Attack on Titan", altTitle: "進撃の巨人", year: 2013, status: "Completed", genre: ["Action", "Drama"], rating: 8.6, platform: "Hulu", link: "https://www.imdb.com/find/?q=Attack+on+Titan", totalEpisodes: 25, color: "#8a4b2c",
+      description: "Humanity hides behind massive walls from giants, until the day the walls are breached.",
+      seasons: [{ name: "Season 1", episodes: [
+        { title: "To You, in 2000 Years: The Fall of Shiganshina (1)", link: "https://www.imdb.com/find/?q=Attack+on+Titan", duration: "24m" },
+        { title: "That Day: The Fall of Shiganshina (2)", link: "https://www.imdb.com/find/?q=Attack+on+Titan", duration: "24m" },
+        { title: "A Dim Light Amid Despair: Humanity's Comeback (1)", link: "https://www.imdb.com/find/?q=Attack+on+Titan", duration: "24m" } ] }] },
+    { type: "series", title: "Spy x Family", altTitle: "スパイファミリー", year: 2022, status: "Ongoing", genre: ["Comedy", "Action"], rating: 8.6, platform: "Crunchyroll", link: "https://www.imdb.com/find/?q=Spy+x+Family", totalEpisodes: 25, color: "#d85a7f",
+      description: "A spy, an assassin and a telepath pose as a family, each hiding the truth from the others.",
+      seasons: [{ name: "Season 1", episodes: [
+        { title: "Operation Strix", link: "https://www.imdb.com/find/?q=Spy+x+Family", duration: "24m" },
+        { title: "Secure a Wife", link: "https://www.imdb.com/find/?q=Spy+x+Family", duration: "24m" },
+        { title: "Prepare for the Interview", link: "https://www.imdb.com/find/?q=Spy+x+Family", duration: "24m" } ] }] },
+    { type: "series", title: "Vinland Saga", altTitle: "ヴィンランド・サガ", year: 2019, status: "Completed", genre: ["Action", "Drama", "Historical"], rating: 8.7, platform: "Prime Video", link: "https://www.imdb.com/find/?q=Vinland+Saga", totalEpisodes: 24, color: "#4a6b8a",
+      description: "A young Viking warrior seeks revenge on the man who killed his father, and learns what it costs.",
+      seasons: [{ name: "Season 1", episodes: [] }] },
+    { type: "series", title: "Cyberpunk: Edgerunners", altTitle: "サイバーパンク エッジランナーズ", year: 2022, status: "Completed", genre: ["Sci-Fi", "Action"], rating: 8.6, platform: "Netflix", link: "https://www.imdb.com/find/?q=Cyberpunk+Edgerunners", totalEpisodes: 10, color: "#e0c92a",
+      description: "A street kid in Night City joins a crew of mercenaries after losing everything.",
+      seasons: [{ name: "Season 1", episodes: [] }] },
+    { type: "movie", title: "Your Name.", altTitle: "君の名は。", year: 2016, genre: ["Romance", "Fantasy"], rating: 8.4, platform: "Prime Video", link: "https://www.imdb.com/find/?q=Your+Name+2016", color: "#e0709a",
+      description: "Two strangers begin swapping bodies in their sleep and slowly fall for each other." },
+    { type: "movie", title: "Spirited Away", altTitle: "千と千尋の神隠し", year: 2001, genre: ["Fantasy", "Adventure"], rating: 8.6, platform: "Max", link: "https://www.imdb.com/find/?q=Spirited+Away", color: "#d0603f",
+      description: "A girl wanders into a spirit world and takes a job at a bathhouse to free her parents." }
+  ]
+};
+var state = { site: {}, items: [], raw: null, view: "home", genre: "All", q: "" };
+var heroIdx = 0, heroTimer = null, heroList = [];
+var $ = function (id) { return document.getElementById(id); };
+var ICON = {
+  play: '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',
+  info: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>',
+  close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  left: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
+  right: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>',
+  copy: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></svg>'
+};
+var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+function isHttp(u) { return typeof u === "string" && /^https?:\/\//i.test(u.trim()); }
+function hueFrom(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360; return h; }
+function toast(msg) { var t = $("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(function () { t.classList.remove("show"); }, 1900); }
+
+/* data */
+function normEps(arr, fallback) {
+  return (arr || []).map(function (e, i) {
+    e = e || {};
+    var n = parseInt(e.number) || i + 1;
+    return { number: n, title: (e.title && String(e.title).trim()) || ("Episode " + n), link: isHttp(e.link) ? e.link.trim() : fallback, duration: e.duration ? String(e.duration) : "", description: e.description ? String(e.description) : "" };
+  });
+}
+function normItem(m, i) {
+  if (!m || typeof m.title !== "string" || !m.title.trim()) throw new Error("Item " + (i + 1) + " needs a \"title\".");
+  if (!isHttp(m.link)) throw new Error("\"" + m.title + "\" needs a \"link\" starting with http:// or https://.");
+  var seasons = [];
+  if (Array.isArray(m.seasons)) m.seasons.forEach(function (s, si) { s = s || {}; seasons.push({ name: s.name ? String(s.name) : "Season " + (si + 1), episodes: normEps(s.episodes, m.link.trim()) }); });
+  else if (Array.isArray(m.episodes)) seasons.push({ name: "Episodes", episodes: normEps(m.episodes, m.link.trim()) });
+  var type = (m.type === "movie" || m.type === "series") ? m.type : (seasons.length ? "series" : "movie");
+  var listed = seasons.reduce(function (n, s) { return n + s.episodes.length; }, 0);
+  var g = m.genre; if (typeof g === "string") g = [g]; if (!Array.isArray(g)) g = [];
+  var r = parseFloat(m.rating), total = parseInt(m.totalEpisodes);
+  return { type: type, title: m.title.trim(), altTitle: m.altTitle ? String(m.altTitle) : "", year: m.year || "", status: m.status ? String(m.status) : "", genre: g.map(String), rating: isNaN(r) ? null : r, platform: m.platform ? String(m.platform) : "", link: m.link.trim(), description: m.description ? String(m.description) : "", color: /^#[0-9a-f]{3,8}$/i.test(m.color || "") ? m.color : null, image: (isHttp(m.image) || /^data:image\//.test(m.image || "")) ? m.image : null, featured: !!m.featured, seasons: seasons, epCount: isNaN(total) ? listed : Math.max(total, listed), order: i };
+}
+function parseRaw(text) {
+  var data = JSON.parse(text), raw;
+  if (Array.isArray(data)) raw = { anime: data };
+  else if (data && typeof data === "object") { raw = data; if (!Array.isArray(raw.anime) && Array.isArray(raw.movies)) { raw.anime = raw.movies; delete raw.movies; } }
+  if (!raw || !Array.isArray(raw.anime)) throw new Error("Expected an object with an \"anime\" list.");
+  return raw;
+}
+function load(text) { var raw = parseRaw(text); state.raw = raw; state.site = raw.site || {}; state.items = raw.anime.map(normItem); render(); }
+
+/* building blocks */
+function colorsOf(m) { var h = hueFrom(m.title); return [m.color || "hsl(" + h + " 55% 42%)", "hsl(" + ((h + 140) % 360) + " 50% 30%)"]; }
+function setColors(node, m) { var c = colorsOf(m); node.style.setProperty("--c", c[0]); node.style.setProperty("--c2", c[1]); }
+function artEl(m, withAlt) {
+  var a = el("div", "art"); setColors(a, m);
+  a.setAttribute("data-initial", m.title.charAt(0).toUpperCase());
+  if (m.image) { var im = document.createElement("img"); im.alt = ""; im.loading = "lazy"; im.src = m.image; im.onerror = function () { im.remove(); }; a.appendChild(im); }
+  if (withAlt && m.altTitle) a.appendChild(el("span", "alt", m.altTitle));
+  return a;
+}
+function startLink(m) {
+  if (m.type === "series") for (var s = 0; s < m.seasons.length; s++) if (m.seasons[s].episodes.length) return m.seasons[s].episodes[0].link;
+  return m.link;
+}
+function watchA(href, label, cls, title, icon) {
+  var a = el("a", cls);
+  a.href = href; a.target = "_blank"; a.rel = "noopener noreferrer sponsored nofollow";
+  a.setAttribute("aria-label", "Watch " + title + " (opens in a new tab)");
+  if (icon) a.innerHTML = ICON.play;
+  if (label) a.appendChild(el("span", null, label));
+  return a;
+}
+function epsLabel(m) { return m.type === "movie" ? "Film" : m.epCount + (m.epCount === 1 ? " episode" : " episodes"); }
+function factsEl(m) {
+  var f = el("div", "facts");
+  if (m.rating != null) f.appendChild(el("span", "score", "★ " + m.rating.toFixed(1)));
+  if (m.year) f.appendChild(el("span", null, String(m.year)));
+  f.appendChild(el("span", null, epsLabel(m)));
+  if (m.type === "series" && m.status) f.appendChild(el("span", null, m.status));
+  if (m.genre.length) f.appendChild(el("span", null, m.genre.join(", ")));
+  return f;
+}
+function card(m) {
+  var c = el("div", "card"), p = el("div", "poster");
+  p.appendChild(artEl(m, true));
+  if (m.rating != null) p.appendChild(el("span", "rate", "★ " + m.rating.toFixed(1)));
+  p.appendChild(el("div", "ct", m.title));
+  p.appendChild(el("span", "eps-tag", epsLabel(m)));
+  var o = el("button", "open"); o.type = "button"; o.setAttribute("aria-label", "Details for " + m.title);
+  o.onclick = function () { openDetail(m); };
+  p.appendChild(o);
+  p.appendChild(watchA(startLink(m), "", "play", m.title, true));
+  c.appendChild(p);
+  var cap = el("div", "cap"); cap.appendChild(el("span", null, m.platform)); cap.appendChild(el("span", null, String(m.year || "")));
+  c.appendChild(cap);
+  return c;
+}
+function row(title, list) {
+  var s = el("section", "row"); s.appendChild(el("h2", null, title));
+  var rail = el("div", "rail"), tr = el("div", "track");
+  list.forEach(function (m) { tr.appendChild(card(m)); });
+  function arrow(dir) {
+    var b = el("button", "arrow " + (dir < 0 ? "l" : "r")); b.type = "button"; b.innerHTML = dir < 0 ? ICON.left : ICON.right;
+    b.setAttribute("aria-label", dir < 0 ? "Scroll left" : "Scroll right");
+    b.onclick = function () { tr.scrollBy({ left: dir * tr.clientWidth * .85, behavior: reduce ? "auto" : "smooth" }); };
+    return b;
+  }
+  rail.appendChild(arrow(-1)); rail.appendChild(tr); rail.appendChild(arrow(1)); s.appendChild(rail);
+  return s;
+}
+
+/* billboard */
+function heroPick() { var f = state.items.filter(function (m) { return m.featured; }); return f.length ? f : state.items.slice(0, 4); }
+function billboard() {
+  var b = el("section", "billboard");
+  var art = el("div"); art.id = "bbArt"; art.style.cssText = "position:absolute;inset:0"; b.appendChild(art);
+  var v = el("div", "vert"); v.id = "bbVert"; b.appendChild(v);
+  var c = el("div", "bb"); c.id = "bbContent"; b.appendChild(c);
+  var d = el("div", "dots"); d.id = "bbDots"; b.appendChild(d);
+  b.onmouseenter = stopHero; b.onmouseleave = startHero;
+  return b;
+}
+function paintHero(swap) {
+  var m = heroList[heroIdx]; if (!m) return;
+  var art = $("bbArt"); art.textContent = ""; art.appendChild(artEl(m, false));
+  var v = $("bbVert"); v.textContent = m.altTitle; v.hidden = !m.altTitle;
+  var c = $("bbContent"); c.textContent = "";
+  var chips = el("div", "chips2");
+  chips.appendChild(el("span", "badge gold", m.type === "movie" ? "Film" : "Series"));
+  if (m.platform) chips.appendChild(el("span", "badge", "Watch on " + m.platform));
+  c.appendChild(chips);
+  c.appendChild(el("h1", null, m.title));
+  c.appendChild(factsEl(m));
+  if (m.description) c.appendChild(el("p", null, m.description));
+  var cta = el("div", "cta");
+  cta.appendChild(watchA(startLink(m), m.type === "movie" ? "Watch film" : "Start watching", "btn go", m.title, true));
+  var more = el("button", "btn ghost"); more.type = "button"; more.innerHTML = ICON.info; more.appendChild(el("span", null, "Details"));
+  more.onclick = function () { openDetail(m); };
+  cta.appendChild(more); c.appendChild(cta);
+  c.classList.remove("swap"); if (swap) { void c.offsetWidth; c.classList.add("swap"); }
+  var dots = $("bbDots"); dots.textContent = "";
+  if (heroList.length > 1) heroList.forEach(function (x, i) {
+    var d = el("button"); d.type = "button"; d.setAttribute("aria-label", "Show " + x.title);
+    if (i === heroIdx) d.setAttribute("aria-current", "true");
+    d.onclick = function () { heroIdx = i; paintHero(true); };
+    dots.appendChild(d);
+  });
+}
+function startHero() { stopHero(); if (reduce || heroList.length < 2 || state.view !== "home") return; heroTimer = setInterval(function () { if (document.querySelector("dialog[open]")) return; heroIdx = (heroIdx + 1) % heroList.length; paintHero(true); }, 7500); }
+function stopHero() { if (heroTimer) clearInterval(heroTimer); heroTimer = null; }
+
+/* views */
+function byRating(l) { return l.slice().sort(function (a, b) { return (b.rating || 0) - (a.rating || 0); }); }
+function render() {
+  var main = $("main"); main.textContent = ""; stopHero();
+  [].forEach.call($("nav").children, function (b) { b.setAttribute("aria-current", String(b.getAttribute("data-view") === state.view)); });
+  var name = state.site.name || "Sakuga";
+  $("siteName").textContent = name; $("footName").textContent = name; $("footTag").textContent = state.site.tagline || "";
+  document.title = name + " – Anime worth watching";
+  onScroll();
+  if (!state.items.length) {
+    var e = el("div", "page"), em = el("div", "empty"); em.appendChild(el("b", null, "Your list is empty"));
+    em.appendChild(document.createTextNode("Check back soon, new anime are added regularly."));
+    e.appendChild(em); main.appendChild(e); return;
+  }
+  if (state.view === "home") {
+    heroList = heroPick(); heroIdx = 0;
+    main.appendChild(billboard()); paintHero(false);
+    var rows = el("div", "rows"), it = state.items;
+    rows.appendChild(row("Staff picks", it));
+    rows.appendChild(row("Highest rated", byRating(it).slice(0, 10)));
+    var series = it.filter(function (m) { return m.type === "series"; }), films = it.filter(function (m) { return m.type === "movie"; });
+    if (series.length > 1) rows.appendChild(row("Series to binge", series));
+    if (films.length) rows.appendChild(row("Films", films));
+    var g = {}, p = {};
+    it.forEach(function (m) { m.genre.forEach(function (x) { (g[x] = g[x] || []).push(m); }); if (m.platform) (p[m.platform] = p[m.platform] || []).push(m); });
+    Object.keys(g).sort(function (a, b) { return g[b].length - g[a].length; }).filter(function (k) { return g[k].length > 1; }).slice(0, 4).forEach(function (k) { rows.appendChild(row(k, g[k])); });
+    Object.keys(p).sort(function (a, b) { return p[b].length - p[a].length; }).filter(function (k) { return p[k].length > 1; }).slice(0, 3).forEach(function (k) { rows.appendChild(row("On " + k, p[k])); });
+    main.appendChild(rows); startHero(); return;
+  }
+  var title, list = state.items;
+  if (state.view === "series") { title = "Series"; list = byRating(list.filter(function (m) { return m.type === "series"; })); }
+  else if (state.view === "movies") { title = "Movies"; list = byRating(list.filter(function (m) { return m.type === "movie"; })); }
+  else { title = "Results for “" + state.q + "”"; var q = state.q.toLowerCase(); list = list.filter(function (m) { return (m.title + " " + m.altTitle + " " + m.genre.join(" ") + " " + m.platform).toLowerCase().indexOf(q) >= 0; }); }
+  var page = el("div", "page"); page.appendChild(el("h1", null, title));
+  var set = {}; list.forEach(function (m) { m.genre.forEach(function (x) { set[x] = 1; }); });
+  var names = ["All"].concat(Object.keys(set).sort());
+  if (names.indexOf(state.genre) < 0) state.genre = "All";
+  if (names.length > 2) {
+    var chips = el("div", "chips"); chips.setAttribute("role", "group"); chips.setAttribute("aria-label", "Filter by genre");
+    names.forEach(function (n) { var b = el("button", "chip", n); b.type = "button"; b.setAttribute("aria-pressed", String(n === state.genre)); b.onclick = function () { state.genre = n; render(); window.scrollTo(0, 0); }; chips.appendChild(b); });
+    page.appendChild(chips);
+  }
+  var shown = list.filter(function (m) { return state.genre === "All" || m.genre.indexOf(state.genre) >= 0; });
+  if (!shown.length) { var em2 = el("div", "empty"); em2.appendChild(el("b", null, "Nothing found")); em2.appendChild(document.createTextNode("Try another word, or suggest it with the Submit anime button.")); page.appendChild(em2); }
+  else { var grid = el("div", "grid"); shown.forEach(function (m) { grid.appendChild(card(m)); }); page.appendChild(grid); }
+  main.appendChild(page);
+}
+function setView(v) { state.view = v; state.genre = "All"; if (v !== "search") { state.q = ""; $("q").value = ""; $("sclear").hidden = true; } render(); window.scrollTo(0, 0); }
+
+/* details */
+function renderEpisodes(m, si, box) {
+  box.textContent = "";
+  var s = m.seasons[si];
+  if (!s || !s.episodes.length) { box.appendChild(el("div", "noeps", "Episodes coming soon.")); return; }
+  s.episodes.forEach(function (e) {
+    var a = watchA(e.link, "", "ep", m.title + " " + e.title, false);
+    a.appendChild(el("div", "epn", String(e.number)));
+    var t = el("div", "ept"); t.appendChild(el("b", null, e.title));
+    if (e.duration) t.appendChild(el("small", null, e.duration));
+    if (e.description) t.appendChild(el("p", null, e.description));
+    a.appendChild(t);
+    var go = el("span", "epgo"); go.innerHTML = ICON.play; a.appendChild(go);
+    box.appendChild(a);
+  });
+}
+function openDetail(m) {
+  var d = $("detailBody"); d.textContent = "";
+  var x = el("button", "x"); x.type = "button"; x.innerHTML = ICON.close; x.setAttribute("aria-label", "Close"); x.onclick = function () { $("detail").close(); };
+  d.appendChild(x);
+  var art = el("div", "d-art"); art.appendChild(artEl(m, false)); d.appendChild(art);
+  var b = el("div", "d-body"); setColors(b, m);
+  b.appendChild(el("h2", null, m.title));
+  if (m.altTitle) b.appendChild(el("div", "jp", m.altTitle));
+  b.appendChild(factsEl(m));
+  if (m.description) b.appendChild(el("p", "desc", m.description));
+  var cta = el("div", "cta");
+  cta.appendChild(watchA(startLink(m), m.type === "movie" ? (m.platform ? "Watch on " + m.platform : "Watch film") : "Start Episode 1", "btn go", m.title, true));
+  if (m.type === "series") cta.appendChild(watchA(m.link, m.platform ? "Series page on " + m.platform : "Series page", "btn ghost", m.title + " series page", false));
+  var cp = el("button", "btn ghost"); cp.type = "button"; cp.innerHTML = ICON.copy; cp.appendChild(el("span", null, "Copy link"));
+  cp.onclick = function () { try { navigator.clipboard.writeText(m.link).then(function () { toast("Link copied"); }, function () { toast("Copy isn't available here"); }); } catch (e) { toast("Copy isn't available here"); } };
+  cta.appendChild(cp); b.appendChild(cta);
+  if (m.type === "series") {
+    b.appendChild(el("h3", null, "Episodes"));
+    var box = el("div", "epwrap");
+    if (m.seasons.length > 1 || (m.seasons[0] && m.seasons[0].name !== "Episodes" && m.seasons.length > 1)) {
+      var tabs = el("div", "seasons"); tabs.setAttribute("role", "group"); tabs.setAttribute("aria-label", "Seasons");
+      m.seasons.forEach(function (s, i) {
+        var t = el("button", "chip", s.name); t.type = "button"; t.setAttribute("aria-pressed", String(i === 0));
+        t.onclick = function () { [].forEach.call(tabs.children, function (c, j) { c.setAttribute("aria-pressed", String(j === i)); }); renderEpisodes(m, i, box); };
+        tabs.appendChild(t);
+      });
+      b.appendChild(tabs);
+    }
+    renderEpisodes(m, 0, box); b.appendChild(box);
+  }
+  var like = state.items.filter(function (o) { return o !== m && o.genre.some(function (g) { return m.genre.indexOf(g) >= 0; }); }).slice(0, 6);
+  if (like.length) { b.appendChild(el("h3", null, "More like this")); var gr = el("div", "grid"); like.forEach(function (o) { gr.appendChild(card(o)); }); b.appendChild(gr); }
+  d.appendChild(b);
+  var dlg = $("detail"); if (!dlg.open) dlg.showModal(); dlg.scrollTop = 0;
+}
+$("detail").addEventListener("click", function (e) { if (e.target === this) this.close(); });
+
+/* header */
+function onScroll() { $("top").classList.toggle("solid", window.scrollY > 40 || state.view !== "home"); }
+window.addEventListener("scroll", onScroll, { passive: true });
+[].forEach.call($("nav").children, function (b) { b.onclick = function () { setView(b.getAttribute("data-view")); }; });
+$("brand").onclick = function () { setView("home"); };
+function syncClear() { $("sclear").hidden = !$("q").value; }
+$("q").oninput = function (e) { var v = e.target.value.trim(); syncClear(); if (v) { state.q = v; state.view = "search"; state.genre = "All"; render(); } else if (state.view === "search") setView("home"); };
+$("q").onkeydown = function (e) { if (e.key === "Escape") { $("sclear").click(); $("q").blur(); } };
+$("sclear").onclick = function () { $("q").value = ""; syncClear(); if (state.view === "search") setView("home"); $("q").focus(); };
+function syncThemeLabel() { $("themeBtn").textContent = document.documentElement.getAttribute("data-theme") === "light" ? "Switch to dark theme" : "Switch to light theme"; }
+$("themeBtn").onclick = function () { var r = document.documentElement; r.setAttribute("data-theme", r.getAttribute("data-theme") === "light" ? "dark" : "light"); syncThemeLabel(); $("menu").hidden = true; };
+
+/* Add anime: the entry is sent to the owner's Gmail as text */
+function v(id) { return $(id).value.trim(); }
+function syncType() { var sr = $("fType").value === "series"; $("statusWrap").hidden = !sr; $("seasonWrap").hidden = !sr; $("epsWrap").hidden = !sr; }
+$("fType").onchange = syncType;
+function resetSubmit() {
+  ["fTitle", "fAlt", "fLink", "fPlatform", "fGenres", "fYear", "fRating", "fDesc", "fEps", "fName", "fEmail"].forEach(function (id) { $(id).value = ""; });
+  $("fSeason").value = "Season 1"; $("fType").value = "series"; $("subErr").textContent = "";
+  $("subForm").hidden = false; $("subDone").hidden = true; syncType();
+}
+$("addBtn").onclick = function () { $("menu").hidden = true; resetSubmit(); $("submit").showModal(); };
+$("avatar").onclick = function (e) { e.stopPropagation(); var m = $("menu"); m.hidden = !m.hidden; $("avatar").setAttribute("aria-expanded", String(!m.hidden)); };
+document.addEventListener("click", function (e) { if (!$("menu").contains(e.target)) { $("menu").hidden = true; $("avatar").setAttribute("aria-expanded", "false"); } });
+$("subCancel").onclick = $("subClose").onclick = function () { $("submit").close(); };
+$("submit").addEventListener("click", function (e) { if (e.target === this) this.close(); });
+
+function buildMessage() {
+  var series = $("fType").value === "series", L = [];
+  L.push("NEW ANIME SUBMISSION", "");
+  L.push("Type: " + (series ? "Series" : "Movie"));
+  L.push("Title: " + v("fTitle"));
+  if (v("fAlt")) L.push("Japanese title: " + v("fAlt"));
+  L.push("Watch link: " + v("fLink"));
+  if (v("fPlatform")) L.push("Platform: " + v("fPlatform"));
+  if (v("fGenres")) L.push("Genres: " + v("fGenres"));
+  if (v("fYear")) L.push("Year: " + v("fYear"));
+  if (v("fRating")) L.push("Rating: " + v("fRating"));
+  if (series) L.push("Status: " + $("fStatus").value);
+  if (v("fDesc")) L.push("", "Description:", v("fDesc"));
+  if (series) {
+    var eps = v("fEps").split("\n").map(function (x) { return x.trim(); }).filter(Boolean);
+    L.push("", (v("fSeason") || "Season 1") + " (" + eps.length + " episodes):");
+    eps.forEach(function (x, i) { L.push((i + 1) + ". " + x); });
+  }
+  L.push("", "Submitted by: " + (v("fName") || "(no name)"), "Reply email: " + (v("fEmail") || "(none)"));
+  return L.join("\n");
+}
+function showDone(sent, msg) {
+  $("subForm").hidden = true; $("subDone").hidden = false;
+  $("subText").value = msg;
+  $("subMsg").textContent = sent ? "Thank you! Your entry was sent to the site owner." : "Gmail should open with your message ready. Press Send in Gmail to finish. If it didn't open, use one of the buttons below, or copy the text and email it to " + OWNER_EMAIL + ".";
+  $("subGmail").hidden = sent; $("subMail").hidden = sent; $("subCopy").hidden = sent;
+}
+$("subSend").onclick = function () {
+  var err = $("subErr"); err.textContent = "";
+  if (!v("fTitle")) { err.textContent = "Please add the title."; return; }
+  if (!isHttp(v("fLink"))) { err.textContent = "Please add a watch link that starts with https://"; return; }
+  var r = v("fRating"); if (r && (isNaN(parseFloat(r)) || parseFloat(r) < 0 || parseFloat(r) > 10)) { err.textContent = "Rating must be a number from 0 to 10."; return; }
+  if (v("fEmail") && !/^\S+@\S+\.\S+$/.test(v("fEmail"))) { err.textContent = "That email address doesn't look right."; return; }
+  var subject = "Anime submission: " + v("fTitle"), body = buildMessage();
+  var mailto = "mailto:" + OWNER_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  $("subMail").href = mailto;
+  $("subGmail").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(OWNER_EMAIL) + "&su=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  var full = "To: " + OWNER_EMAIL + "\nSubject: " + subject + "\n\n" + body;
+  if (SUBMIT_ENDPOINT) {
+    fetch(SUBMIT_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ subject: subject, message: body, name: v("fName"), email: v("fEmail") }) })
+      .then(function (res) { if (!res.ok) throw new Error("failed"); showDone(true, full); })
+      .catch(function () { showDone(false, full); });
+  } else {
+    showDone(false, full);
+    $("subGmail").click();
+  }
+};
+$("subCopy").onclick = function () { var t = $("subText").value; try { navigator.clipboard.writeText(t).then(function () { toast("Copied. Paste it into an email."); }, function () { $("subText").select(); }); } catch (e) { $("subText").select(); } };
+
+/* boot */
+load(JSON.stringify(LIBRARY));
+syncThemeLabel(); syncType();
+</script>
+</body>
+</html>
