@@ -8,30 +8,285 @@
       "type": "series",
       "title": "Frieren: Beyond Journey's End",
       "altTitle": "葬送のフリーレン",
-      "link": "https://your-referral-link.com/frieren",
-      "platform": "Crunchyroll",
       "year": 2023,
       "status": "Ongoing",
-      "genre": ["Fantasy", "Adventure", "Drama"],
+      "genre": [
+        "Fantasy",
+        "Adventure",
+        "Drama"
+      ],
       "rating": 9.3,
+      "platform": "Crunchyroll",
+      "link": "https://www.imdb.com/find/?q=Frieren+Beyond+Journey%27s+End",
       "totalEpisodes": 28,
-      "description": "After the demon king falls, an elf mage outlives her party and sets out to understand the friends she never really knew.",
-      "color": "#5b7fd6",
       "featured": true,
+      "color": "#5b7fd6",
+      "description": "After the demon king falls, an elf mage outlives her party and sets out to understand the friends she never really knew.",
       "seasons": [
         {
           "name": "Season 1",
           "episodes": [
-            { "title": "The Journey's End", "link": "https://your-referral-link.com/frieren/1", "duration": "24m" },
-            { "title": "It Didn't Have to Be Magic...", "link": "https://your-referral-link.com/frieren/2", "duration": "24m" },
-            { "title": "Killing Magic", "link": "https://your-referral-link.com/frieren/3", "duration": "24m" }
+            {
+              "title": "The Journey's End",
+              "link": "https://www.imdb.com/find/?q=Frieren",
+              "duration": "24m"
+            },
+            {
+              "title": "It Didn't Have to Be Magic...",
+              "link": "https://www.imdb.com/find/?q=Frieren",
+              "duration": "24m"
+            },
+            {
+              "title": "Killing Magic",
+              "link": "https://www.imdb.com/find/?q=Frieren",
+              "duration": "24m"
+            }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "altTitle": "鋼の錬金術師",
+      "year": 2009,
+      "status": "Completed",
+      "genre": [
+        "Action",
+        "Fantasy",
+        "Adventure"
+      ],
+      "rating": 9.1,
+      "platform": "Crunchyroll",
+      "link": "https://www.imdb.com/find/?q=Fullmetal+Alchemist+Brotherhood",
+      "totalEpisodes": 64,
+      "featured": true,
+      "color": "#c8811f",
+      "description": "Two brothers search for the Philosopher's Stone to restore the bodies they lost to a forbidden ritual.",
+      "seasons": [
         {
-          "name": "Season 2",
+          "name": "Season 1",
           "episodes": [
-            { "title": "Episode 1 title", "link": "https://your-referral-link.com/frieren/s2e1", "duration": "24m" }
+            {
+              "title": "Fullmetal Alchemist",
+              "link": "https://www.imdb.com/find/?q=Fullmetal+Alchemist+Brotherhood",
+              "duration": "24m"
+            },
+            {
+              "title": "The First Day",
+              "link": "https://www.imdb.com/find/?q=Fullmetal+Alchemist+Brotherhood",
+              "duration": "24m"
+            },
+            {
+              "title": "City of Heresy",
+              "link": "https://www.imdb.com/find/?q=Fullmetal+Alchemist+Brotherhood",
+              "duration": "24m"
+            }
           ]
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "title": "Jujutsu Kaisen",
+      "altTitle": "呪術廻戦",
+      "year": 2020,
+      "status": "Ongoing",
+      "genre": [
+        "Action",
+        "Supernatural"
+      ],
+      "rating": 8.6,
+      "platform": "Crunchyroll",
+      "link": "https://www.imdb.com/find/?q=Jujutsu+Kaisen",
+      "totalEpisodes": 24,
+      "featured": true,
+      "color": "#7a3fd0",
+      "description": "A student swallows a cursed finger to protect his friends and is pulled into a world of sorcerers.",
+      "seasons": [
+        {
+          "name": "Season 1",
+          "episodes": [
+            {
+              "title": "Ryomen Sukuna",
+              "link": "https://www.imdb.com/find/?q=Jujutsu+Kaisen",
+              "duration": "24m"
+            },
+            {
+              "title": "For Myself",
+              "link": "https://www.imdb.com/find/?q=Jujutsu+Kaisen",
+              "duration": "24m"
+            },
+            {
+              "title": "Girl of Steel",
+              "link": "https://www.imdb.com/find/?q=Jujutsu+Kaisen",
+              "duration": "24m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "title": "Demon Slayer",
+      "altTitle": "鬼滅の刃",
+      "year": 2019,
+      "status": "Ongoing",
+      "genre": [
+        "Action",
+        "Fantasy"
+      ],
+      "rating": 8.4,
+      "platform": "Netflix",
+      "link": "https://www.imdb.com/find/?q=Demon+Slayer",
+      "totalEpisodes": 26,
+      "color": "#1f8f7a",
+      "description": "After his family is slaughtered, a kind-hearted boy trains to hunt demons and cure his sister.",
+      "seasons": [
+        {
+          "name": "Season 1",
+          "episodes": [
+            {
+              "title": "Cruelty",
+              "link": "https://www.imdb.com/find/?q=Demon+Slayer",
+              "duration": "24m"
+            },
+            {
+              "title": "Trainer Sakonji Urokodaki",
+              "link": "https://www.imdb.com/find/?q=Demon+Slayer",
+              "duration": "24m"
+            },
+            {
+              "title": "Sabito and Makomo",
+              "link": "https://www.imdb.com/find/?q=Demon+Slayer",
+              "duration": "24m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "title": "Attack on Titan",
+      "altTitle": "進撃の巨人",
+      "year": 2013,
+      "status": "Completed",
+      "genre": [
+        "Action",
+        "Drama"
+      ],
+      "rating": 8.6,
+      "platform": "Hulu",
+      "link": "https://www.imdb.com/find/?q=Attack+on+Titan",
+      "totalEpisodes": 25,
+      "color": "#8a4b2c",
+      "description": "Humanity hides behind massive walls from giants, until the day the walls are breached.",
+      "seasons": [
+        {
+          "name": "Season 1",
+          "episodes": [
+            {
+              "title": "To You, in 2000 Years: The Fall of Shiganshina (1)",
+              "link": "https://www.imdb.com/find/?q=Attack+on+Titan",
+              "duration": "24m"
+            },
+            {
+              "title": "That Day: The Fall of Shiganshina (2)",
+              "link": "https://www.imdb.com/find/?q=Attack+on+Titan",
+              "duration": "24m"
+            },
+            {
+              "title": "A Dim Light Amid Despair: Humanity's Comeback (1)",
+              "link": "https://www.imdb.com/find/?q=Attack+on+Titan",
+              "duration": "24m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "title": "Spy x Family",
+      "altTitle": "スパイファミリー",
+      "year": 2022,
+      "status": "Ongoing",
+      "genre": [
+        "Comedy",
+        "Action"
+      ],
+      "rating": 8.6,
+      "platform": "Crunchyroll",
+      "link": "https://www.imdb.com/find/?q=Spy+x+Family",
+      "totalEpisodes": 25,
+      "color": "#d85a7f",
+      "description": "A spy, an assassin and a telepath pose as a family, each hiding the truth from the others.",
+      "seasons": [
+        {
+          "name": "Season 1",
+          "episodes": [
+            {
+              "title": "Operation Strix",
+              "link": "https://www.imdb.com/find/?q=Spy+x+Family",
+              "duration": "24m"
+            },
+            {
+              "title": "Secure a Wife",
+              "link": "https://www.imdb.com/find/?q=Spy+x+Family",
+              "duration": "24m"
+            },
+            {
+              "title": "Prepare for the Interview",
+              "link": "https://www.imdb.com/find/?q=Spy+x+Family",
+              "duration": "24m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "title": "Vinland Saga",
+      "altTitle": "ヴィンランド・サガ",
+      "year": 2019,
+      "status": "Completed",
+      "genre": [
+        "Action",
+        "Drama",
+        "Historical"
+      ],
+      "rating": 8.7,
+      "platform": "Prime Video",
+      "link": "https://www.imdb.com/find/?q=Vinland+Saga",
+      "totalEpisodes": 24,
+      "color": "#4a6b8a",
+      "description": "A young Viking warrior seeks revenge on the man who killed his father, and learns what it costs.",
+      "seasons": [
+        {
+          "name": "Season 1",
+          "episodes": []
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "title": "Cyberpunk: Edgerunners",
+      "altTitle": "サイバーパンク エッジランナーズ",
+      "year": 2022,
+      "status": "Completed",
+      "genre": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "rating": 8.6,
+      "platform": "Netflix",
+      "link": "https://www.imdb.com/find/?q=Cyberpunk+Edgerunners",
+      "totalEpisodes": 10,
+      "color": "#e0c92a",
+      "description": "A street kid in Night City joins a crew of mercenaries after losing everything.",
+      "seasons": [
+        {
+          "name": "Season 1",
+          "episodes": []
         }
       ]
     },
@@ -39,13 +294,31 @@
       "type": "movie",
       "title": "Your Name.",
       "altTitle": "君の名は。",
-      "link": "https://your-referral-link.com/your-name",
-      "platform": "Prime Video",
       "year": 2016,
-      "genre": ["Romance", "Fantasy"],
+      "genre": [
+        "Romance",
+        "Fantasy"
+      ],
       "rating": 8.4,
-      "description": "Two strangers begin swapping bodies in their sleep and slowly fall for each other.",
-      "color": "#e0709a"
+      "platform": "Prime Video",
+      "link": "https://www.imdb.com/find/?q=Your+Name+2016",
+      "color": "#e0709a",
+      "description": "Two strangers begin swapping bodies in their sleep and slowly fall for each other."
+    },
+    {
+      "type": "movie",
+      "title": "Spirited Away",
+      "altTitle": "千と千尋の神隠し",
+      "year": 2001,
+      "genre": [
+        "Fantasy",
+        "Adventure"
+      ],
+      "rating": 8.6,
+      "platform": "Max",
+      "link": "https://www.imdb.com/find/?q=Spirited+Away",
+      "color": "#d0603f",
+      "description": "A girl wanders into a spirit world and takes a job at a bathhouse to free her parents."
     }
   ]
 }
